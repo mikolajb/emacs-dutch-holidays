@@ -1,0 +1,11 @@
+(setq dutch-national-holidays
+      `((holiday-fixed 1 1 "Nieuwjaar - New Year's Day")
+        (holiday-easter-etc 1 "Eerste Paasday en Tweede Paasdag - Easter")
+	(holiday-sexp '(if (= 0 (% year 5))
+                           (list 5 5 year))
+                      "Bevrijdingsdag - Liberation Day")
+        (holiday-sexp '(if (= 0 (calendar-day-of-week (list 4 30 year)))
+                           (list 4 29 year)
+                         (list 4 30 year))
+                      "Koninginnedag - Queen's Day")
+        ))
